@@ -26,14 +26,14 @@ jobs:
       run: |
         yarn install
         yarn lint
-        
+
   test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [22.x]
-
+    needs: build
     steps:
     - uses: actions/checkout@v4
 
